@@ -23,7 +23,7 @@ with st.form("Search"):
 placeholder=st.empty()
 if keyword:
     page = requests.get(f"https://unsplash.com/s/photos/{keyword}")
-    soup = BeautifulSoup(page.content, "html.parser")
+    soup = BeautifulSoup(page.content, "html5lib")
     rows=soup.find_all("div", class_="ripi6")
     col10,col11=placeholder.columns(2)
     for index,row in enumerate(rows):
